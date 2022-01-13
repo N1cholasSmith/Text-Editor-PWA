@@ -24,14 +24,14 @@ export const getDb = async () => {
   const tx = jateDb.transaction('jate', 'readonly');
 
   // Open up the desired object store.
-  const store = tx.objectStore('jate');
+  const store = tx.objectStore({id:1, value: content});
 
   // Use the .getAll() method to get all data in the database.
   const request = store.getAll();
 
   const result = await request;
   console.log('Data Saved to the JateDB', result);
-  return result;
+  return result?.value;
 };
 
 // PUT DATABASE =================================================================================================
@@ -48,11 +48,11 @@ export const putDb = async (content) => {
   const store = tx.objectStore('jate');
 
   // Use the .add() method on the store and pass in the content.
-  const request = store.add({content});
+  const request = store.put({id:1, value: content});
 
   // Get confirmation of the request.
-  const result = await request;
   console.log('data in the DB UPDATED', result);
+  return result?.value;
 };
 
 // POST DATABASE =================================================================================================
