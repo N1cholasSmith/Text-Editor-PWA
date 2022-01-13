@@ -24,7 +24,7 @@ export const getDb = async () => {
   const tx = jateDb.transaction('jate', 'readonly');
 
   // Open up the desired object store.
-  const store = tx.objectStore({id:1, value: content});
+  const store = tx.objectStore('jate');
 
   // Use the .getAll() method to get all data in the database.
   const request = store.getAll();
@@ -52,7 +52,8 @@ export const putDb = async (content) => {
 
   // Get confirmation of the request.
   console.log('data in the DB UPDATED', result);
-  return result?.value;
+  // return result?.value;
+  const result = await request
 };
 
 // POST DATABASE =================================================================================================
