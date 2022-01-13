@@ -33,8 +33,14 @@ https://user-images.githubusercontent.com/88865022/149327977-ae070803-6bbf-42f2-
 <a name="installation"></a>
 ## ⚙️ Installation 
 
-<a name="usage"></a>
-## 🖥 Usage 
+1. Git clone this repository onto your local machine and navigate to the file on your terminal
+
+2. Run npm install to download all the required dependencies
+
+3. To start the application, run and then open your broswer to the listening port:
+
+    - `npm run start`
+    - `http://localhost:3000`
 
 <a name="contributors"></a>
 ## 👥 Contributors
